@@ -28,7 +28,8 @@ function Box({id, src,href,  title, index}) {
       }
       
       const uref = (link) =>{
-        window.Location.href = link;
+        console.log(href, "")
+        window.location.href = link;
       }
   return (
      <div onClick={()=>{uref(href)}} key={index} >
