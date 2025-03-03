@@ -60,8 +60,8 @@ function Home() {
           <Box href={movie.embed_url} id={movie.imdb_id} key={index} title={movie.title} src={movie.Poster} />
         )):
         new Array(20).fill("").map((some, index)=>(
-          <div className='flex flex-col'>
-           <Skeleton  key={index} variant="circular" width={200} height={140} />
+          <div key={index} className='flex flex-col'>
+           <Skeleton   variant="circular" width={200} height={140} />
            <span>
             <Skeleton width={190} height={10}/>
            </span>
