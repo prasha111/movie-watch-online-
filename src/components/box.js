@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import { useNavigate } from 'react-router-dom';
 function Box({id, src,href,  title, index}) {
-    const navigate  = useNavigate()
     const memo =(id)=> {
         let result = {};
         return (...args)=>{
@@ -29,7 +28,7 @@ function Box({id, src,href,  title, index}) {
       }
       
       const uref = (link) =>{
-        navigate(link)
+        window.Location.href = link;
       }
   return (
      <div onClick={()=>{uref(href)}} key={index} >
