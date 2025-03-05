@@ -10,6 +10,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Search from "@/components/search";
 import useDebounce from "../hooks/debounce";
+import intersectionObserver from "../hooks/intersectionObserver";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -44,29 +45,7 @@ function Home() {
       console.error("Error fetching movies:", error);
     }
   };
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "20px",
-      threshold: 1.0,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setPage((prevPage) => prevPage + 1);
-      }
-    }, options);
-
-    if (loader.current) {
-      observer.observe(loader.current);
-    }
-
-    return () => {
-      if (loader.current) {
-        observer.unobserve(loader.current);
-      }
-    };
-  }, []);
+  intersectionObserver(loader, setPage)
  
   const handle=(e)=>{
     console.log(e.target.value)
