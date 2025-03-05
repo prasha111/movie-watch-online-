@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       <meta name="referrer" content="origin" />
+      <link rel="manifest" href="./public/manifest.json" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
