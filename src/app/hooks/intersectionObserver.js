@@ -26,7 +26,7 @@ function intersectionObserver(loader, setPage) {
         };
       }, []);
   return (
-    <div>intersectionObserver</div>
+    <div></div>
   )
 }
 
