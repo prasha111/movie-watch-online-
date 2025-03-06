@@ -8,7 +8,6 @@ function intersectionObserver(loader, setPage) {
           rootMargin: "20px",
           threshold: 1.0,
         };
-    
         const observer = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
             setPage((prevPage) => prevPage + 1);
