@@ -46,7 +46,6 @@ function Home() {
     }
   };
   intersectionObserver(loader, setPage)
- 
   const handle=(e)=>{
     console.log(e.target.value)
     setInputSearch(e.target.value)
