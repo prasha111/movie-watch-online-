@@ -65,9 +65,7 @@ function Home() {
           type="text"
            onChange={(e)=>{setInputSearch(e.target.value)}}
             value={"dvcewfvw"}
-         
             />
-
           <a href="#contact">Contact</a>
           <a href="#about">About</a>
         </nav>
