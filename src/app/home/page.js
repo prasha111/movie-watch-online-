@@ -44,7 +44,7 @@ function Home() {
       const data = await response.json(); 
       console.log(data)
       data.result.map(async(movie)=>{
-        const dataPosterMovie = await fetch(`http://www.omdbapi.com/?i=${movie.imdb_id}&apikey=2cbbdc85`)
+        const dataPosterMovie = await fetch(`https://www.omdbapi.com/?i=${movie.imdb_id}&apikey=2cbbdc85`)
         console.log(dataPosterMovie.json().then((res)=>{
           console.log(res, movie)
           
