@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useNavigate } from 'react-router-dom';
 function Box({id, src,href,  title, index}) {
+  console.log(src, "nvghfg", src=="N/A", src=="undefined")
     const memo =(id)=> {
         let result = {};
         return (...args)=>{
@@ -34,7 +35,7 @@ function Box({id, src,href,  title, index}) {
   return (
      <div onClick={()=>{uref(href)}} key={index} >
             <div   className="border border-1 h-[fit] w-[fit]">
-                  <Image height={150} width={200} src={"https://m.media-amazon.com/images/M/MV5BNmQ1MjAwMzQtNjhjOS00MzNmLTk5NmMtNTYxNmMyN2I5NzhiXkEyXkFqcGc@._V1_SX300.jpg"}                                 alt='some'/> 
+                  <Image height={150} width={200} src={(src != "N/A" && src != 'undefined')? src: "https://m.media-amazon.com/images/M/MV5BNmQ1MjAwMzQtNjhjOS00MzNmLTk5NmMtNTYxNmMyN2I5NzhiXkEyXkFqcGc@._V1_SX300.jpg"} alt='some'/> 
               </div>
               <span className='block text-center'>
                     {title}

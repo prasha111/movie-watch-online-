@@ -7,6 +7,7 @@ function Search({handle, inputSearch}) {
         console.log("Some")
     }
     const debounce = useDebounce(some, 2000)
+    
   return (
     <>
      <input
