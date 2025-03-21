@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 
-function intersectionObserver(loader, setPage) {
+function useIntersectionObserver(loader, setPage) {
      useEffect(() => {
         const options = {
           root: null,
@@ -29,4 +29,4 @@ function intersectionObserver(loader, setPage) {
   )
 }
 
-export default intersectionObserver
+export default useIntersectionObserver
