@@ -1,7 +1,6 @@
-import React from 'react'
 import { useEffect } from 'react';
 
-function useIntersectionObserver(loader, setPage) {
+function useHook(loader, setPage) {
      useEffect(() => {
         const options = {
           root: null,
@@ -24,9 +23,7 @@ function useIntersectionObserver(loader, setPage) {
           }
         };
       }, []);
-  return (
-    <div>intersectionObserver</div>
-  )
+ 
 }
 
-export default useIntersectionObserver
+export default useHook

@@ -10,7 +10,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Search from "@/components/search";
 import useDebounce from "../hooks/debounce";
-import intersectionObserver from "../hooks/intersectionObserver";
+import useHook from "../hooks/intersectionObserver";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -63,7 +63,7 @@ function Home() {
       
     }
   };
-  useIntersectionObserver(loader, setPage)
+  useHook(loader, setPage)
   const handle=(e)=>{
     console.log(e.target.value)
     setInputSearch(e.target.value)
