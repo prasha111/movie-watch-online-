@@ -34,8 +34,9 @@ function Box({id, src,href,  title, index}) {
       }
   return (
      <div onClick={()=>{uref(href)}} key={index} >
-            <div   className="border border-1 h-[fit] w-[fit]">
-                  <Image priority height={150} width={200} src={(src != "N/A" && src != 'undefined')? src: "https://m.media-amazon.com/images/M/MV5BNmQ1MjAwMzQtNjhjOS00MzNmLTk5NmMtNTYxNmMyN2I5NzhiXkEyXkFqcGc@._V1_SX300.jpg"} alt='some'/> 
+            <div   className="border border-gray-700 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-1 h-[fit] w-[fit]">
+                  <Image priority height={150} width={200} src={(src != "N/A" && src != 'undefined')? src: "https://m.media-amazon.com/images/M/MV5BNmQ1MjAwMzQtNjhjOS00MzNmLTk5NmMtNTYxNmMyN2I5NzhiXkEyXkFqcGc@._V1_SX300.jpg"} alt='some' className='object-cover w-full h-auto'
+                  /> 
               </div>
               <span className='block text-center'>
                     {title}
