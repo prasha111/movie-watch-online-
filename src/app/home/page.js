@@ -17,21 +17,30 @@ function Home() {
   const [page, setPage] = useState(1);
   const loader = useRef(null);
   const [inputSearch, setInputSearch] = useState("");
+  const fetchMovieDetails = async (imdbID) => {
+    try {
+      const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=2cbbdc85`);
+      const data = await response.json();
+      return { ...data, embed_url: `https://player.vidsrc.co/embed/movie/${imdbID}` };
+    } catch (error) {
+      console.error("Error fetching movie details:", error);
+      return null;
+    }
+  };
 
   const some = useCallback(async(prop)=>{
+    if (!prop) return;
     try {
-      const response = await fetch(
-        `http://www.omdbapi.com/?t=${prop}&apikey=2cbbdc85`
-      );
+      const response = await fetch(`https://www.omdbapi.com/?s=${prop}&apikey=2cbbdc85`);
       const data = await response.json();
-      data.title = data.Title
-      console.log(data)
-      //const res = await fetch(`https://vidsrc.xyz/embed/movie?imdb=${imdbID}`)
-      console.log(data, "d")
-
-      setMovies((prev)=>[data, ...prev]);
+      if (data.Search) {
+        const movieDetails = await Promise.all(
+          data.Search.map(async (movie) => await fetchMovieDetails(movie.imdbID))
+        );
+        setMovies(movieDetails.filter((movie) => movie !== null));
+      }
     } catch (error) {
-      console.error("Error fetching movies:", error);
+      console.error("Error searching movies:", error);
     }
   },[])
   const debounce = useDebounce(some, 2000)
