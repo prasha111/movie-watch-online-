@@ -16,7 +16,8 @@ function Search({handle, inputSearch}) {
             value={inputSearch}
             id="universal-search-input"
             placeholder="Find Movies &amp; TV"
-            class="search-input"
+            class="search-input text-white"
+            className='search-input'
            
           />
           <section className=''>

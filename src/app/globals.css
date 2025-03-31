@@ -110,7 +110,7 @@ body {
 
 /* Adding a search icon inside the input */
 .search-input {
-  
+  color: white;
   background-repeat: no-repeat;
   background-position: 15px center;
   padding-left: 40px;

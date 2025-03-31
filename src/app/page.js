@@ -91,12 +91,13 @@ function Home() {
   console.log(movies == false);
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
-      <header class="flex flex-col md:flex-row justify-between items-center py-4 border-b border-gray-700 ">
+      <header class="flex  flex-col md:flex-row items-center justify-between items-center py-4 border-b border-gray-700 ">
         <h1 className="text-white font-bold text-2xl">Watch Movies Online</h1>
-        <nav class="header-right align-middle  flex gap-4 mt-4 md:mt-0">
+        <nav class="header-right align-middle items-center  flex gap-4 mt-4 md:mt-0 sm:gap-4">
           <Search handle={handle} value={inputSearch}/>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
+          <span className="flex gap-8 md:gap-4">    <a href="#contact">Contact</a>
+          <a href="#about">About</a></span>
+      
         </nav>
       </header>
       <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mt-6">
