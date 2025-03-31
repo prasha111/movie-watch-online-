@@ -1,6 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import { useNavigate } from 'react-router-dom';
+import  { lazy, Suspense } from "react";
+
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
+
+//const MovieDetails = lazy(() => import("./pages/MovieDetails"));
+
 function Box({id, src,href,  title, index}) {
   console.log(src, "nvghfg", src=="N/A", src=="undefined")
     const memo =(id)=> {
@@ -34,9 +42,14 @@ function Box({id, src,href,  title, index}) {
       }
   return (
      <div onClick={()=>{uref(href)}} key={index} >
+      
             <div   className="border border-gray-700 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-1 h-[fit] w-[fit]">
-                  <Image priority height={150} width={200} src={(src != "N/A" && src != 'undefined')? src: "https://m.media-amazon.com/images/M/MV5BNmQ1MjAwMzQtNjhjOS00MzNmLTk5NmMtNTYxNmMyN2I5NzhiXkEyXkFqcGc@._V1_SX300.jpg"} alt='some' className='object-cover w-full h-auto'
-                  /> 
+            <Suspense fallback={<div>Loading...</div>}>
+            <LazyLoadImage priority height={150} width={200}  src={(src != "N/A" && src != 'undefined')? src: "https://m.media-amazon.com/images/M/MV5BNmQ1MjAwMzQtNjhjOS00MzNmLTk5NmMtNTYxNmMyN2I5NzhiXkEyXkFqcGc@._V1_SX300.jpg"} alt={title} effect="blur"/>
+            </Suspense>
+           
+                  {/* <Image  src={(src != "N/A" && src != 'undefined')? src: "https://m.media-amazon.com/images/M/MV5BNmQ1MjAwMzQtNjhjOS00MzNmLTk5NmMtNTYxNmMyN2I5NzhiXkEyXkFqcGc@._V1_SX300.jpg"} alt='some' className='object-cover w-full h-auto'
+                  />  */}
               </div>
               <span className='block text-center'>
                     {title}
