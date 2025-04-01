@@ -125,8 +125,8 @@ function Home() {
       </nav>
     </header>
     <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mt-6">
-      {movies.length > 0
-        ? movies.map((movie, index) => (
+      {movies?.length > 0
+        ? movies?.map((movie, index) => (
             <Box key={index} href={movie.embed_url} id={movie.imdb_id} title={movie.title} src={movie.Poster} />
           ))
         : new Array(20).fill("").map((_, index) => (

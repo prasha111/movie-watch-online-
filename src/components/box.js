@@ -14,7 +14,7 @@ function Box({ id, src, href, title, index }) {
     <div onClick={() => uref(href)} key={index}>
       <div className="border border-gray-700 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-fit w-fit">
         <Image
-          priority
+          priority={index<6}
           height={150}
           width={200}
           src={src && src !== "N/A" && src !== "undefined" ? src : placeholderImg}
