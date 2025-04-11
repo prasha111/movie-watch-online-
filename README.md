@@ -1,6 +1,6 @@
 
 This is for educational purpose
-Live url https://movie-watch-online.vercel.app
+[![Live Site](https://img.shields.io/badge/Live--Demo-%2300C853?style=for-the-badge&logo=vercel&logoColor=white)](https://movie-watch-online.vercel.app)
 
 Free Movies Online
 Free Movies Online is a web application that allows users to watch movies online for free. The platform offers a user-friendly interface to explore and stream a variety of movies.
